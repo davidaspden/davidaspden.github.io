@@ -22,7 +22,6 @@ body {
     width: 150px;
     height: 150px;
     margin: 0 auto;
-    border: 4px solid #fff;
     overflow: visible;
     transition: all cubic-bezier(0.4, 0.25, 0.14, 1.5);
     transition-duration: 1s;
@@ -47,13 +46,16 @@ body {
 .right,
 .left,
 .bottom,
-.lid {
+.lid,
+.front{
     position: absolute;
     width: 150px;
     height: 150px;
     z-index: 999;
     transition: all 1s ease;
     border: 4px solid #fff;
+    
+    filter: blur(calc(10px - (var(--mess)  ) * .133px));
 }
 
 .top {
@@ -83,5 +85,12 @@ body {
 .lid {
     transform-origin: 0% 0%;
     transform: translateZ(calc(150px - var(--mess) * 2.5px));
+    border: 4px solid #fff;
+}
+
+.front {
+
+    transform-origin: 0% 0%;
+    transform: translateZ(calc(0px + var(--mess) * 2.5px));
     border: 4px solid #fff;
 }
